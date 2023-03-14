@@ -1,4 +1,4 @@
-package huawei.water;
+package test.water;
 
 import java.util.Scanner;
 

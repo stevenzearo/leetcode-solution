@@ -1,4 +1,4 @@
-package huawei.charCount;
+package test.charCount;
 
 import java.util.HashSet;
 import java.util.Scanner;
