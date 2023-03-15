@@ -1,6 +1,5 @@
 package middle.connect2;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**

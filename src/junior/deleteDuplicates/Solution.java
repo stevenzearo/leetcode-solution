@@ -1,7 +1,5 @@
 package junior.deleteDuplicates;
 
-import java.util.List;
-
 /**
  * @author Steve Zou
  */
