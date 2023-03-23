@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class Demo {
 
     public List<String> splitStr(String s, int n) {
-        List<String> allWords = Arrays.asList(s.split("\s+")).stream().filter(str -> !s.trim().isEmpty()).collect(Collectors.toList());
+        List<String> allWords = Arrays.asList(s.split("\\s+")).stream().filter(str -> !s.trim().isEmpty()).collect(Collectors.toList());
 
         List<String> cleanWords = new ArrayList<>();
 
