@@ -1,5 +1,7 @@
 package middle.addTwoNumbers;
 
+import common.ListNode;
+
 /**
  * @author Steve Zou
  */

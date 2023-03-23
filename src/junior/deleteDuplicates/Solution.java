@@ -1,5 +1,7 @@
 package junior.deleteDuplicates;
 
+import common.ListNode;
+
 /**
  * @author Steve Zou
  */

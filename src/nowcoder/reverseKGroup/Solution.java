@@ -1,5 +1,7 @@
 package nowcoder.reverseKGroup;
 
+import common.ListNode;
+
 /**
  * @author Steve Zou
  */

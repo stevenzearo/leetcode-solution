@@ -4,6 +4,8 @@ package junior.isSameTree;
  * @author Steve Zou
  */
 
+import common.TreeNode;
+
 /**
  * <a href="https://leetcode.cn/problems/same-tree/">isSameTree</a>
  */

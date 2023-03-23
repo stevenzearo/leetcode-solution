@@ -1,5 +1,6 @@
 package nowcoder.reverseList;
 
+import common.ListNode;
 import java.util.ArrayList;
 import java.util.List;
 

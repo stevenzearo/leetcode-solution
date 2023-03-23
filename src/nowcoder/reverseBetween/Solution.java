@@ -1,5 +1,7 @@
 package nowcoder.reverseBetween;
 
+import common.ListNode;
+
 /**
  * @author Steve Zou
  */
