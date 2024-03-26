@@ -1,36 +1,37 @@
 package middle.lengthOfLongestSubstring;
 
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
+// https://leetcode.cn/problems/longest-substring-without-repeating-characters/submissions/
 /**
  * @author Steve Zou
  */
 public class Solution {
+    /*
+    * result: 超出时间限制
+    * */
     public int lengthOfLongestSubstring(String s) {
         char[] chars = s.toCharArray();
         if (chars.length <= 1) return chars.length;
 
-
-        HashSet<Character> set = new HashSet<>();
-        int[] maxInd = new int[2];
+        int maxCount = 0;
+        Set<Character> characterSet = new LinkedHashSet<>();
         for (int i = 0; i < chars.length; i++) {
+            characterSet.clear();
             for (int j = i; j < chars.length; j++) {
-                char[] subChars = new char[j + 1 - i];
-                for (int k = i; k < j + 1; k++) {
-                    set.add(chars[k]);
+                if (characterSet.contains(chars[j])) {
+                    maxCount = Math.max(characterSet.size(), maxCount);
+                    characterSet.clear();
+                    characterSet.add(chars[j]);
+                } else {
+                    characterSet.add(chars[j]);
                 }
-                if (set.size() == j + 1 - i) {
-                    int curLen = maxInd[1] - maxInd[0];
-                    if (curLen < j + 1 - i) {
-                        maxInd[0] = i;
-                        maxInd[1] = j;
-                    }
-                }
-                set.clear();
             }
+            maxCount = Math.max(characterSet.size(), maxCount);
         }
-        return maxInd[1] - maxInd[0] + 1;
+        return Math.max(characterSet.size(), maxCount);
     }
 
     public int lengthOfLongestSubstring2(String s) {
@@ -64,7 +65,24 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int length = solution.lengthOfLongestSubstring2("abcabcbb");
-        System.out.println(length);
+
+        int length = solution.lengthOfLongestSubstring("abcabcbb");
+        System.out.println(length == 3);
+
+        length = solution.lengthOfLongestSubstring("bbbb");
+        System.out.println(length == 1);
+
+        length = solution.lengthOfLongestSubstring("pwwkew");
+        System.out.println(length == 3);
+
+
+        length = solution.lengthOfLongestSubstring("aab");
+        System.out.println(length == 2);
+
+        length = solution.lengthOfLongestSubstring("aabbcd");
+        System.out.println(length == 3);
+
+        length = solution.lengthOfLongestSubstring("dvdf");
+        System.out.println(length == 3);
     }
 }
